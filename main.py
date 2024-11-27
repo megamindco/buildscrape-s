@@ -15,7 +15,7 @@ app = Flask(__name__)
 BEARER_TOKEN = os.getenv('BEARER_TOKEN')  # Load the bearer token from the .env file
 REQUEST_LIMIT = 100
 request_count = 0
-summarizer = pipeline("summarization")
+summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6", revision="a4f8f3e")
 
 # Function to check bearer token
 def check_bearer_token(token):
